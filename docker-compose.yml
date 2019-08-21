@@ -3,7 +3,7 @@ services:
   php-workspace:
     build: php
     volumes:
-      - ~/docker-compose-test/code:/var/www/html
+      - ./code:/var/www/html
   nginx:
     build: nginx
     ports:

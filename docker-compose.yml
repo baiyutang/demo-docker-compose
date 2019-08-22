@@ -1,11 +1,16 @@
 version: '3'
 services:
   php-workspace:
-    build: php
+    build: ./php
     volumes:
       - ./code:/var/www/html
+    depends_on:
+      - db
+      - redis
   nginx:
-    build: nginx
+    build: ./nginx
+    volumes:
+      - ./log/nginx:/var/log/nginx/
     ports:
       - "8080:8080"
   db:

@@ -13,6 +13,8 @@ services:
       - ./log/nginx:/var/log/nginx/
     ports:
       - "8080:8080"
+    depends_on:
+      - php-workspace
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
